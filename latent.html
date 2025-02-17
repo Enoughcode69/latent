@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latent Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .animate-slideUp {
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        .animate-zoomIn {
+            animation: zoomIn 2s ease-in-out;
+        }
+
+        /* Floating button animation */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        /* Bounce animation for floating button */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Button hover effect */
+        .floating-btn:hover {
+            background-color: #ff4081;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Button active state */
+        .floating-btn:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<div class="container mx-auto px-4 py-12 flex flex-col items-center justify-center text-center">
+    <!-- Header -->
+    <div class="heading text-4xl font-bold mb-6 animate-fadeIn">Welcome to Latent</div>
+    <div class="subheading text-lg text-gray-600 mb-10 animate-fadeIn">Made Of Tailwind CSS and HTML and Javascript and Love.</div>
+
+    <!-- Phone Mockups -->
+    <div class="phone-mockup mb-10 w-72 h-[600px] bg-white rounded-3xl shadow-xl animate-slideUp">
+        <div class="screen rounded-2xl overflow-hidden">
+            <img src="1.jpg" alt="Screenshot 1" class="w-full h-full object-cover animate-zoomIn">
+        </div>
+    </div>
+
+    <div class="phone-mockup mb-10 w-72 h-[600px] bg-white rounded-3xl shadow-xl animate-slideUp">
+        <div class="screen rounded-2xl overflow-hidden">
+            <img src="2.jpg" alt="Screenshot 2" class="w-full h-full object-cover animate-zoomIn">
+        </div>
+    </div>
+</div>
+
+<!-- Floating Source Code Button -->
+<div class="floating-btn">
+    <a href="https://enoughcode69.mini.site/products/4d2c1a15-5d4d-474c-8231-e7cbb924b096"
+       class="bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300">
+       View Source Code
+    </a>
+</div>
+
+</body>
+</html>
